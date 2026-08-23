@@ -1,0 +1,23 @@
+{
+    "$schema": "https://ui.shadcn.com/schema.json",
+    "style": "default",
+    "rsc": false,
+    "tsx": true,
+    "tailwind": {
+        "config": "",
+        "css": "src/styles/globals.css",
+        "baseColor": "neutral",
+        "cssVariables": true
+    },
+    "aliases": {
+        "components": "@/components",
+        "ui": "@/components/ui",
+        "lib": "@/lib",
+        "hooks": "@/hooks",
+        "utils": "@/lib/utils"
+    },
+    "registries": {
+        "@nimbuscn": "https://nimbuscn.dev/r/{name}.json",
+        "@nimbuscn/radix": "https://nimbuscn.dev/r/radix/{name}.json"
+    }
+}

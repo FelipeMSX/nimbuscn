@@ -1,0 +1,87 @@
+- name: FEATURE
+  color: "b4f7b4"
+  description: "New user-facing capability that doesn't exist yet"
+
+- name: BUG
+  color: "f4a3a3"
+  description: "Existing behavior that's broken or incorrect"
+
+- name: CHORE
+  color: "a3d9d3"
+  description: "Maintenance work with no user-facing behavior change (deps, config, cleanup, build/lint/CI tooling)"
+
+- name: TEST
+  color: "c3b4f7"
+  description: "Test coverage added or fixed with no production code change"
+
+- name: DOCS
+  color: "d0d0d0"
+  description: "Documentation content only — MDX pages, guides, API reference, README"
+
+- name: COMPONENT
+  color: "e0b4f7"
+  description: "A Ni* form field or its underlying primitive — new or changed, in either variant"
+
+- name: REGISTRY
+  color: "f7c9a3"
+  description: "Registry items, registry.json, the shadcn build, or the install/consume flow"
+
+- name: BASE UI
+  color: "b4c9f7"
+  description: "Scoped to the Base UI variant (@nimbuscn), the canonical implementation"
+
+- name: RADIX
+  color: "f7b48c"
+  description: "Scoped to the Radix UI variant (@nimbuscn/radix), the maintained port"
+
+- name: SITE
+  color: "c9d4f7"
+  description: "Docs site platform — Astro app, Fumadocs layout, search, SEO, theming"
+
+- name: PREVIEW
+  color: "d9c9f7"
+  description: "Component preview infrastructure — demo files, code blocks, prop toggles, variant switcher"
+
+- name: I18N
+  color: "a3e3d9"
+  description: "Localization — locale routing, translations, locale-aware search, hreflang"
+
+- name: A11Y
+  color: "f7d9a3"
+  description: "Accessibility — keyboard interaction, ARIA contracts, screen readers, contrast"
+
+- name: DX
+  color: "cfe3a3"
+  description: "Developer experience for consumers — install ergonomics, error messages, types"
+
+- name: INFRA
+  color: "b8b8d9"
+  description: "Build, CI/CD, Docker, Coolify, Cloudflare, release tooling"
+
+- name: SYNC
+  color: "e3b8d9"
+  description: "The one-way monorepo-to-public sync, its generator, or the drift guard"
+
+- name: BREAKING
+  color: "e05a5a"
+  description: "Changes the shape of generated code or the registry contract — consumers must act"
+
+- name: GOOD FIRST ISSUE
+  color: "8cd98c"
+  description: "Small, well-scoped, and self-contained — a reasonable first contribution"
+
+- name: HELP WANTED
+  color: "a3d9f7"
+  description: "Maintainer would welcome someone picking this up"
+
+- name: NEEDS INVESTIGATION
+  color: "f7e3a3"
+  description: "Scope or approach isn't clear yet — needs research or discussion before work can start"
+
+- name: NEEDS DECISION
+  color: "f7f0a3"
+  description: "Blocked on a product or architecture decision rather than on work"
+
+- name: BLOCKED
+  color: "d9a3a3"
+  description: "Cannot progress until another issue lands"

@@ -1,0 +1,70 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    verify:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22.18.0
+
+            - run: corepack enable
+
+            - run: yarn install --immutable
+
+            - name: Lint
+              run: yarn lint
+
+            - name: Format
+              run: yarn format:check
+
+            - name: Typecheck
+              run: yarn check
+
+            - name: Test
+              run: yarn test
+
+            - name: Build registry
+              run: yarn registry:build
+
+            - name: Build site
+              run: yarn build
+
+            - name: Upload site
+              uses: actions/upload-artifact@v4
+              with:
+                  name: site
+                  path: dist
+                  retention-days: 7
+
+    registry-install:
+        runs-on: ubuntu-latest
+        needs: verify
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22.18.0
+
+            - run: corepack enable
+
+            - run: yarn install --immutable
+
+            - name: Build registry
+              run: yarn registry:build
+
+            - name: Install every item into a clean app
+              run: node scripts/verify-registry-install.mjs

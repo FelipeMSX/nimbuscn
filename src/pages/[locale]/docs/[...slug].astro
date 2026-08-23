@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from "astro:content";
+
+import DocsLayout from "@/layouts/DocsLayout.astro";
+import { defaultLocale, locales } from "@/lib/i18n";
+import { localeOf, pathOf } from "@/lib/source";
+
+export async function getStaticPaths() {
+    const entries = await getCollection("docs");
+    return entries
+        .filter((entry) => localeOf(entry) !== defaultLocale)
+        .filter((entry) => locales.includes(localeOf(entry)))
+        .map((entry) => ({
+            params: { locale: localeOf(entry), slug: pathOf(entry) || undefined },
+            props: { entry },
+        }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<DocsLayout title={entry.data.title} description={entry.data.description} locale={localeOf(entry)}>
+    <article class="prose"><Content /></article>
+</DocsLayout>

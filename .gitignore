@@ -1,0 +1,15 @@
+node_modules
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+.yarn/install-state.gz
+.astro
+dist
+public/r
+.env
+.env.*
+!.env.example
+.DS_Store
+test-results
+playwright-report
+coverage

@@ -1,0 +1,47 @@
+{
+    "editor.fontFamily": "Hasklug Nerd Font Mono",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "smooth",
+    "editor.smoothScrolling": true,
+    "editor.renderLineHighlight": "gutter",
+    "editor.semanticHighlighting.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.rulers": [100],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.oxc": "explicit"
+    },
+    "terminal.integrated.fontFamily": "Hasklug Nerd Font Mono",
+    "terminal.integrated.smoothScrolling": true,
+    "[typescript]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+    "[typescriptreact]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+    "[javascript]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+    "[json]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+    "[jsonc]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+    "[astro]": { "editor.defaultFormatter": "astro-build.astro-vscode" },
+    "[mdx]": { "editor.defaultFormatter": "astro-build.astro-vscode" },
+    "oxc.typeAware": true,
+    "oxc.lint.run": "onSave",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${basename}.spec.ts",
+        "*.tsx": "${basename}.spec.tsx",
+        "astro.config.mjs": "tsconfig.json, components.json, registry.json, .oxfmtrc.json, .editorconfig, .yarnrc.yml, yarn.lock",
+        "package.json": ".gitignore, LICENSE, CHANGELOG.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, SECURITY.md",
+        "*.mdx": "$(capture).*.mdx"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "tailwindCSS.experimental.classRegex": [
+        ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+        ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    ],
+    "search.exclude": {
+        "**/dist": true,
+        "**/.astro": true,
+        "**/public/r": true,
+        "**/node_modules": true
+    }
+}

@@ -1,0 +1,83 @@
+---
+import "@/styles/globals.css";
+
+import { defaultLocale, isLocale, localeNames, locales } from "@/lib/i18n";
+import { treeFor } from "@/lib/source";
+
+type Props = {
+    title: string;
+    description?: string;
+    locale?: string;
+};
+
+const { title, description, locale: rawLocale } = Astro.props;
+const locale = rawLocale && isLocale(rawLocale) ? rawLocale : defaultLocale;
+const tree = await treeFor(locale);
+const prefix = locale === defaultLocale ? "" : `/${locale}`;
+---
+
+<html lang={locale === "pt-br" ? "pt-BR" : "en"}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title} — NimbusCN</title>
+        {description && <meta name="description" content={description} />}
+        {locales.map((alt) => (
+            <link
+                rel="alternate"
+                hreflang={alt === "pt-br" ? "pt-BR" : alt}
+                href={new URL(alt === defaultLocale ? "/" : `/${alt}/`, Astro.site)}
+            />
+        ))}
+        <script is:inline>
+            try {
+                const stored = localStorage.getItem("nimbuscn.theme");
+                const dark = stored ? stored === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+                if (dark) document.documentElement.classList.add("dark");
+            } catch (_) {}
+        </script>
+    </head>
+    <body class="min-h-screen">
+        <header class="border-b border-border">
+            <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+                <a href={`${prefix}/`} class="font-semibold">NimbusCN</a>
+                <div class="flex items-center gap-4 text-sm">
+                    <a href={`${prefix}/docs`}>Docs</a>
+                    <a href={`${prefix}/docs/components`}>Components</a>
+                    <select id="locale-switcher" aria-label="Language" class="bg-transparent">
+                        {locales.map((alt) => (
+                            <option value={alt} selected={alt === locale}>{localeNames[alt]}</option>
+                        ))}
+                    </select>
+                </div>
+            </nav>
+        </header>
+
+        <div class="mx-auto flex max-w-7xl gap-10 px-6 py-10">
+            <aside class="hidden w-56 shrink-0 lg:block">
+                <nav aria-label="Documentation">
+                    <ul class="space-y-1 text-sm">
+                        {tree.map((node) => (
+                            <li>
+                                <a href={`${prefix}/docs/${node.slug}`} class="block py-1">{node.title}</a>
+                                {node.children.length > 0 && (
+                                    <ul class="ml-3 space-y-1 border-l border-border pl-3">
+                                        {node.children.map((child) => (
+                                            <li><a href={`${prefix}/docs/${child.slug}`} class="block py-1 text-muted-foreground">{child.title}</a></li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="min-w-0 flex-1">
+                <h1 class="text-3xl font-semibold tracking-tight">{title}</h1>
+                {description && <p class="mt-2 text-muted-foreground">{description}</p>}
+                <div class="mt-8"><slot /></div>
+            </main>
+        </div>
+    </body>
+</html>
