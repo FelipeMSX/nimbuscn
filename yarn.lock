@@ -5105,9 +5105,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fumadocs-core@npm:^16.15.1":
-  version: 16.15.1
-  resolution: "fumadocs-core@npm:16.15.1"
+"fumadocs-core@npm:^16.15.4":
+  version: 16.15.4
+  resolution: "fumadocs-core@npm:16.15.4"
   dependencies:
     "@fumari/image-size": "npm:^0.1.0"
     estree-util-value-to-estree: "npm:^3.5.0"
@@ -5184,13 +5184,13 @@ __metadata:
       optional: true
     zod:
       optional: true
-  checksum: 10c0/6b4ef986af34698df104e4b18add822ab4dd0ad6f78bc4ee659a8409073fe74e516314699291a1ab96f729cc8623972a3e7ec7a0460c1024e47e833aff9a90f4
+  checksum: 10c0/e6dd71c76c6545684b1af5a33622147c074aa2284a629f0d0cb6139272b37a6f0d32a850e259dde63828eed7f3329af265ba0b99c4b0b596733aaaad63068282
   languageName: node
   linkType: hard
 
-"fumadocs-ui@npm:^16.15.1":
-  version: 16.15.1
-  resolution: "fumadocs-ui@npm:16.15.1"
+"fumadocs-ui@npm:^16.15.4":
+  version: 16.15.4
+  resolution: "fumadocs-ui@npm:16.15.4"
   dependencies:
     "@fuma-translate/react": "npm:^1.0.2"
     "@fumadocs/tailwind": "npm:0.1.1"
@@ -5206,8 +5206,8 @@ __metadata:
     "@radix-ui/react-tabs": "npm:^1.1.21"
     class-variance-authority: "npm:^0.7.1"
     cnfast: "npm:^0.1.0"
-    lucide-react: "npm:^1.31.0"
-    motion: "npm:^13.1.0"
+    lucide-react: "npm:^1.34.0"
+    motion: "npm:^13.1.1"
     next-themes: "npm:^0.4.6"
     react-remove-scroll: "npm:^2.7.2"
     rehype-raw: "npm:^7.0.0"
@@ -5217,7 +5217,7 @@ __metadata:
   peerDependencies:
     "@types/mdx": "*"
     "@types/react": "*"
-    fumadocs-core: 16.15.1
+    fumadocs-core: 16.15.4
     next: 16.x.x
     react: ^19.2.0
     react-dom: ^19.2.0
@@ -5231,7 +5231,7 @@ __metadata:
       optional: true
     takumi-js:
       optional: true
-  checksum: 10c0/ec6f62570ead9168d3b626e782e8cdfa2621458602ab55a977de239b19d59c6e3ff7a80cfe2d0f91165feb55e3e1c3e0ac0f8130f7e62daac7125f86f1b8ab51
+  checksum: 10c0/24243eaf5d6a9f4f0b3b0bf41a0df39916417b66b519c2b864d7f80a714e95b0874411e3e5334912e0ab04ac5c692c8ec673c7d31c748373ce3a14cab306a06a
   languageName: node
   linkType: hard
 
@@ -6358,7 +6358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^1.31.0":
+"lucide-react@npm:^1.34.0":
   version: 1.34.0
   resolution: "lucide-react@npm:1.34.0"
   peerDependencies:
@@ -7225,7 +7225,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"motion@npm:^13.1.0":
+"motion@npm:^13.1.1":
   version: 13.1.1
   resolution: "motion@npm:13.1.1"
   dependencies:
@@ -7314,8 +7314,8 @@ __metadata:
     "@types/react-dom": "npm:^19.2.5"
     astro: "npm:^7.2.5"
     clsx: "npm:^2.1.1"
-    fumadocs-core: "npm:^16.15.1"
-    fumadocs-ui: "npm:^16.15.1"
+    fumadocs-core: "npm:^16.15.4"
+    fumadocs-ui: "npm:^16.15.4"
     oxfmt: "npm:^0.65.0"
     oxlint: "npm:^1.80.0"
     react: "npm:^19.2.8"
